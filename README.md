@@ -63,7 +63,7 @@ Example data structure from `work.yaml`:
 
    ```bash
    git clone <repository-url>
-   cd jonhart-homepage
+   cd cv-jonhart-dev
    ```
 
 2. **Install dependencies:**
