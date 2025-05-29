@@ -1,0 +1,25 @@
+frontend:
+  - Svelte
+  - TypeScript
+  - JavaScript (ES6+)
+  - HTML5
+  - CSS3
+  - Tailwind
+
+backend:
+  - Node.js
+  - NestJS
+  - Python
+  - Django
+  - PostgreSQL
+  - MongoDB
+  - REST APIs
+
+tools:
+  - Git
+  - Docker
+  - Google Cloud
+  - Vite
+  - Vitest
+  - Jest
+  - AI workflows

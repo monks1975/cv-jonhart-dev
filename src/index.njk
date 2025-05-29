@@ -1,0 +1,124 @@
+---
+layout: base.njk
+title: CV
+---
+
+<div class="intro">
+  <div class="intro-content">
+    <div class="intro-avatar">
+      <img src="/assets/avatar.jpg" alt="Picture of {{ intro.name }}" class="avatar" width="800" height="800">
+    </div>
+    <div class="intro-text">
+      <h1>{{ intro.name }}</h1>
+      <p>{{ intro.statement }}</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">Employment History</h2>
+  
+  <ol class="timeline" reversed>
+    {% for job in work %}
+      <li class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <header class="timeline-header">
+            <h3 class="timeline-title">{{ job.title }}</h3>
+            <div class="timeline-subtitle">{{ job.company }}</div>
+            <time class="timeline-date">{{ job.period }}</time>
+          </header>
+          <div class="timeline-body">
+            <p>{{ job.summary }}</p>
+            {% if job.details %}
+              <ul>
+                {% for detail in job.details %}
+                  <li>{{ detail }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Skills</h2>
+  
+  <div class="card">
+    <h3 class="card-title">Frontend Development</h3>
+    <ul class="skills-list">
+      {% for skill in skills.frontend %}
+        <li><span class="pill">{{ skill }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Backend Development</h3>
+    <ul class="skills-list">
+      {% for skill in skills.backend %}
+        <li><span class="pill">{{ skill }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Tools & Technologies</h3>
+    <ul class="skills-list">
+      {% for skill in skills.tools %}
+        <li><span class="pill">{{ skill }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Education</h2>
+  
+  <ol class="timeline" reversed>
+  {% for item in education %}
+    <li class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <header class="timeline-header">
+          <h3 class="timeline-title">{{ item.title }}</h3>
+          <div class="timeline-subtitle">{{ item.institution }}</div>
+          <time class="timeline-date">{{ item.period }}</time>
+        </header>
+      </div>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Contact</h2>
+  
+  <p class="contact-intro">I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+  
+  <div class="contact-grid">
+    <a href="mailto:hartlestone@gmail.com" class="contact-card">
+      <div class="icon-circle">
+        {% icon "lucide:mail" %}
+      </div>
+      <div class="contact-info">
+        <h3 class="contact-title">Email</h3>
+        <p class="contact-detail">hartlestone@gmail.com</p>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/yourprofile" class="contact-card">
+      <div class="icon-circle">
+        {% icon "lucide:linkedin" %}
+      </div>
+      <div class="contact-info">
+        <h3 class="contact-title">LinkedIn</h3>
+        <p class="contact-detail">linkedin.com/in/jonathan-hart-286321137</p>
+      </div>
+    </a>
+
+  </div>
+</section>

@@ -1,0 +1,30 @@
+{
+  "name": "cv-jonhart-dev",
+  "version": "1.0.0",
+  "description": "Jonathan Hart's CV microsite built with 11ty",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --watch",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "11ty",
+    "eleventy",
+    "static-site"
+  ],
+  "author": "Jonathan Hart",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-img": "^6.0.4",
+    "eleventy-plugin-icons": "^4.5.3",
+    "js-yaml": "^4.1.0",
+    "lucide-static": "^0.511.0",
+    "normalize.css": "^8.0.1"
+  }
+}
