@@ -1,6 +1,6 @@
-# Jonathan Hart - CV Microsite
+# Jonathan Hart - CV
 
-A modern, responsive CV/resume website built with [Eleventy (11ty)](https://www.11ty.dev/), featuring clean design and structured data management. This microsite showcases Jonathan Hart's professional experience as a software developer with six years of experience in educational technology.
+A modern, responsive CV/resume website built with [Eleventy (11ty)](https://www.11ty.dev/), featuring clean design and structured data management.
 
 ## Features
 
