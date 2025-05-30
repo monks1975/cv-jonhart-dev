@@ -18,6 +18,10 @@
     "static-site"
   ],
   "author": "Jonathan Hart",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
