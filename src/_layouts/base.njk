@@ -1,33 +1,98 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jonathan Hart - CV & Portfolio">
-  <title>{% if title %}{{ title }} - {% endif %}Jonathan Hart</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-  <div class="container">
 
-    <main class="main">
-      {{ content | safe }}
-    </main>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ intro.statement | truncate(160) }}{% endif %}">
+    <meta name="keywords" content="Jonathan Hart, software developer, web developer, frontend developer, backend developer, CV, resume, portfolio">
+    <meta name="author" content="Jonathan Hart">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cv.jonhart.dev{% if page.url %}{{ page.url }}{% endif %}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cv.jonhart.dev{% if page.url %}{{ page.url }}{% endif %}">
+    <meta property="og:title" content="{{ title | default("Jonathan Hart - Software Developer") }}">
+    <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ intro.statement | truncate(160) }}{% endif %}">
+    <meta property="og:image" content="https://cv.jonhart.dev/assets/avatar.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Jonathan Hart - Software Developer">
+    <meta property="og:site_name" content="Jonathan Hart CV">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://cv.jonhart.dev{% if page.url %}{{ page.url }}{% endif %}">
+    <meta name="twitter:title" content="{{ title | default("Jonathan Hart - Software Developer") }}">
+    <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ intro.statement | truncate(160) }}{% endif %}">
+    <meta name="twitter:image" content="https://cv.jonhart.dev/assets/avatar.jpg">
+    <meta name="twitter:image:alt" content="Jonathan Hart - Software Developer">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="msapplication-TileColor" content="#1a1a1a">
+    
+    <title>{{ title | default("Jonathan Hart - Software Developer") }}</title>
 
-    <footer class="footer">
-      <p>&copy; {% year %} Jonathan Hart. All rights reserved.</p>
-      <p>View source on <a href="https://github.com/monks1975/cv-jonhart-dev" target="_blank" rel="noopener">GitHub</a></p>
-      <p>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a> and hosted on <a href="https://www.cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a></p>
-    </footer>
-  </div>
-</body>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ intro.name }}",
+      "url": "https://cv.jonhart.dev",
+      "image": "https://cv.jonhart.dev/assets/avatar.jpg",
+      "description": "{{ intro.statement }}",
+      "jobTitle": "Software Developer",
+      "email": "hartlestone@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/jonathan-hart-286321137",
+        "https://github.com/monks1975"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "Frontend Development", 
+        "Backend Development",
+        "TypeScript",
+        "Python",
+        "Svelte",
+        "Node.js"
+      ]
+    }
+    </script>
+  
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <main class="main">
+        {{ content | safe }}
+      </main>
+
+      <footer class="footer">
+        <p>&copy; {% year %} Jonathan Hart. All rights reserved.</p>
+        <p>View source on <a href="https://github.com/monks1975/cv-jonhart-dev" target="_blank" rel="noopener">GitHub</a></p>
+        <p>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a> and hosted on <a href="https://www.cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a></p>
+      </footer>
+    </div>
+  </body>
 </html> 
