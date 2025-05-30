@@ -117,13 +117,15 @@ description: "The CV of Jonathan Hart, a software developer with six years exper
   <p class="contact-intro">I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
   
   <div class="contact-grid">
-    <a href="mailto:hartlestone@gmail.com" class="contact-card">
+    <a href="#" class="contact-card email-contact" 
+       data-user="contact" 
+       data-domain="jonhart.dev">
       <div class="icon-circle">
         {% icon "lucide:mail" %}
       </div>
       <div class="contact-info">
         <h3 class="contact-title">Email</h3>
-        <p class="contact-detail">hartlestone@gmail.com</p>
+        <p class="contact-detail email-display">Click to contact</p>
       </div>
     </a>
 
@@ -139,3 +141,32 @@ description: "The CV of Jonathan Hart, a software developer with six years exper
 
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const emailContact = document.querySelector('.email-contact');
+  const emailDisplay = document.querySelector('.email-display');
+  
+  if (emailContact && emailDisplay) {
+    const user = emailContact.dataset.user;
+    const domain = emailContact.dataset.domain;
+    const email = `${user}@${domain}`;
+    
+    // Show email on hover for better UX
+    emailContact.addEventListener('mouseenter', function() {
+      emailDisplay.textContent = email;
+    });
+    
+    // Revert to "Click to contact" on mouse leave
+    emailContact.addEventListener('mouseleave', function() {
+      emailDisplay.textContent = 'Click to contact';
+    });
+    
+    // Handle click to open email client
+    emailContact.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = `mailto:${email}`;
+    });
+  }
+});
+</script>
