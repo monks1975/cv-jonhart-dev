@@ -2,6 +2,8 @@
 
 A modern, responsive CV/resume website built with [Eleventy (11ty)](https://www.11ty.dev/), featuring clean design and structured data management.
 
+The site is currently published at [cv.jonhart.dev](https://cv.jonhart.dev)
+
 ## Features
 
 - 🚀 **Fast Static Site Generation** - Built with Eleventy for optimal performance
